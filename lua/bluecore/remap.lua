@@ -36,3 +36,8 @@ vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader><tab>", "<cmd>wincmd w<CR>")
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+vim.keymap.set("", "<Up>", "<nop>")
+vim.keymap.set("", "<Down>", "<nop>")
+vim.keymap.set("", "<Left>", "<nop>")
+vim.keymap.set("", "<Right>", "<nop>")

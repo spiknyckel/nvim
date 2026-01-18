@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/bluecore/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/bluecore/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/bluecore/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/bluecore/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/bluecore/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/bluecore/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?.lua;/home/bluecore/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?/init.lua;/home/bluecore/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?.lua;/home/bluecore/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/bluecore/.cache/nvim/packer_hererocks/2.1.1741730670/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -78,6 +78,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["boo-colorscheme-nvim"] = {
+    loaded = true,
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/boo-colorscheme-nvim",
+    url = "https://github.com/rockerBOO/boo-colorscheme-nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -138,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/kotlin-vim",
     url = "https://github.com/udalov/kotlin-vim"
+  },
+  ["local-highlight.nvim"] = {
+    loaded = true,
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/local-highlight.nvim",
+    url = "https://github.com/tzachar/local-highlight.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -200,6 +210,14 @@ _G.packer_plugins = {
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-metals"] = {
+    config = { "\27LJ\2\nI\0\0\3\1\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0-\2\0\0B\0\2\1K\0\1\0\1À\25initialize_or_attach\vmetals\frequireÚ\1\1\2\b\0\r\0\0196\2\0\0009\2\1\0029\2\2\2'\4\3\0005\5\4\0B\2\3\0026\3\0\0009\3\1\0039\3\5\3'\5\6\0005\6\b\0009\a\a\0=\a\t\0063\a\n\0=\a\v\6=\2\f\6B\3\3\0012\0\0€K\0\1\0\ngroup\rcallback\0\fpattern\1\0\3\fpattern\0\ngroup\0\rcallback\0\aft\rFileType\24nvim_create_autocmd\1\0\1\nclear\2\16nvim-metals\24nvim_create_augroup\bapi\bvim\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/opt/nvim-metals",
+    url = "https://github.com/scalameta/nvim-metals"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -209,16 +227,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-treesitter-context"] = {
-    loaded = true,
-    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -243,12 +251,17 @@ _G.packer_plugins = {
   ["presence.nvim"] = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/presence.nvim",
-    url = "/home/bluecore/repos/neovim/presence.nvim"
+    url = "https://github.com/BlueKossa/presence.nvim"
   },
   ["prettier.nvim"] = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
+  },
+  ["qmake-syntax-vim"] = {
+    loaded = true,
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/qmake-syntax-vim",
+    url = "https://github.com/artoj/qmake-syntax-vim"
   },
   ["rose-pine"] = {
     loaded = true,
@@ -259,6 +272,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyodark.nvim"] = {
+    config = { "\27LJ\2\n;\0\2\5\0\3\0\a6\2\0\0'\4\1\0B\2\2\0029\2\2\2\18\4\1\0B\2\2\1K\0\1\0\nsetup\14tokyodark\frequire\0" },
+    loaded = true,
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
+    url = "https://github.com/tiagovla/tokyodark.nvim"
   },
   undotree = {
     loaded = true,
@@ -285,30 +304,25 @@ _G.packer_plugins = {
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
+  ["vim-qml"] = {
+    loaded = true,
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/vim-qml",
+    url = "https://github.com/peterhoeg/vim-qml"
+  },
   ["vim-svelte"] = {
     loaded = true,
     path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/vim-svelte",
     url = "https://github.com/evanleck/vim-svelte"
   },
-  ["vim-wakatime"] = {
+  vimtex = {
     loaded = true,
-    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/vim-wakatime",
-    url = "https://github.com/wakatime/vim-wakatime"
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   },
-  ["windows-terminal-bg.nvim"] = {
+  ["which-key.nvim"] = {
     loaded = true,
-    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/windows-terminal-bg.nvim",
-    url = "https://github.com/BlueKossa/windows-terminal-bg.nvim"
-  },
-  ["wsl-copy"] = {
-    loaded = true,
-    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/wsl-copy",
-    url = "https://github.com/christianfosli/wsl-copy"
-  },
-  ["zen-mode.nvim"] = {
-    loaded = true,
-    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
-    url = "https://github.com/folke/zen-mode.nvim"
+    path = "/home/bluecore/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
@@ -317,6 +331,19 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: tokyodark.nvim
+time([[Config for tokyodark.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\2\5\0\3\0\a6\2\0\0'\4\1\0B\2\2\0029\2\2\2\18\4\1\0B\2\2\1K\0\1\0\nsetup\14tokyodark\frequire\0", "config", "tokyodark.nvim")
+time([[Config for tokyodark.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType java ++once lua require("packer.load")({'nvim-metals'}, { ft = "java" }, _G.packer_plugins)]]
+vim.cmd [[au FileType scala ++once lua require("packer.load")({'nvim-metals'}, { ft = "scala" }, _G.packer_plugins)]]
+vim.cmd [[au FileType sbt ++once lua require("packer.load")({'nvim-metals'}, { ft = "sbt" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -8,7 +8,7 @@ function ColorScheme(color)
 end
 
 vim.o.termguicolors = true
-ColorScheme("boo")
+ColorScheme("tokyodark")
 --require("material.functions").change_style("deep ocean")
 
 vim.keymap.set("n", "<leader>hg", function()

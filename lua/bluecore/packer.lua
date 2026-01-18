@@ -8,12 +8,16 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     use { "bluz71/vim-moonfly-colors", as = "moonfly" }
+    use { "tiagovla/tokyodark.nvim",
+        config = function(_, opts)
+            require("tokyodark").setup(opts)
+        end
+    }
     use {
         "EdenEast/nightfox.nvim",
         as = "nightfox",
@@ -98,12 +102,12 @@ return require('packer').startup(function(use)
     use("nvim-tree/nvim-web-devicons")
     --use("glepnir/galaxyline.nvim")
     use("hoob3rt/lualine.nvim")
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    --use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     use("airblade/vim-gitgutter")
     use("evanleck/vim-svelte")
 
     -- Wakatime
-    use("wakatime/vim-wakatime")
+    -- use("wakatime/vim-wakatime")
 
     -- QML
     use("peterhoeg/vim-qml")
@@ -113,5 +117,29 @@ return require('packer').startup(function(use)
     use("folke/which-key.nvim")
 
     -- Latex
-    use("lervag/vimtex")
+    use{"lervag/vimtex"}
+
+    use("tzachar/local-highlight.nvim")
+    use {
+        "scalameta/nvim-metals",
+        ft = { "scala", "sbt", "java" },
+        opts = function()
+            local metals_config = require("metals").bare_config()
+            metals_config.on_attach = function(client, bufnr)
+                -- your on_attach function
+            end
+
+            return metals_config
+        end,
+        config = function(self, metals_config)
+            local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = self.ft,
+                callback = function()
+                    require("metals").initialize_or_attach(metals_config)
+                end,
+                group = nvim_metals_group,
+            })
+        end
+    }
 end)

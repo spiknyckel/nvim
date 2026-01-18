@@ -7,9 +7,26 @@ lspconfig.lua_ls.setup({
     filetypes = { "lua", "balls" },
 })
 
+lspconfig.java_language_server.setup({
+    cmd = { "java-language-server" },
+    filetypes = { "java" },
+})
+
 lspconfig.qmlls.setup{
     filetypes = { "qml" },
 }
+
+-- lspconfig.metals.setup({
+--     cmd = { "metals" },
+--     filetypes = { "scala", "sbt" },
+--     init_options = {
+--         statusBarProvider = "on",
+--         showImplicitArguments = true,
+--         showInferredType = true,
+--         showInferredTypeInDebug = true,
+--     },
+-- })
+
 if is_nix then
     lsp.setup_servers({
         "lua_ls",
@@ -17,10 +34,15 @@ if is_nix then
         "jedi_language_server",
         "qmlls",
         "zls",
+        "hls",
+        "java_language_server",
+        "metals",
+        "gopls",
+        "templ",
     })
 else
     lsp.ensure_installed({
-        'tsserver',
+        'ts_ls',
         'eslint',
         'rust_analyzer',
     })
@@ -93,11 +115,11 @@ local function set_keymaps()
 end
 
 local function enable_inlay()
-    vim.lsp.inlay_hint(0, true)
+    vim.lsp.inlay_hint.enable(true)
 end
 
 local function disable_inlay()
-    vim.lsp.inlay_hint(0, false)
+    vim.lsp.inlay_hint.enable(false)
 end
 
 local group = vim.api.nvim_create_augroup("toggle-lsp-inlay", { clear = true })
@@ -164,3 +186,7 @@ lspconfig.rust_analyzer.setup({
 vim.api.nvim_set_hl(0, "LspInlayHint", {
     link = "Comment",
 })
+
+
+
+

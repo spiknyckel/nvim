@@ -1,4 +1,3 @@
 require("bluecore.remap")
 require("bluecore.set")
 require("bluecore.autocmd")
-require("bluecore.lsp")

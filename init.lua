@@ -1,2 +1,3 @@
 require("bluecore")
-require("bluecore.galaxyline")
+require("config.lazy")
+

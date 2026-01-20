@@ -34,3 +34,5 @@ vim.g.mapleader = " "
 vim.diagnostic.config({
   virtual_text = true,
 })
+
+vim.o.winborder = "rounded"

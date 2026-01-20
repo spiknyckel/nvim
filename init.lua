@@ -1,3 +1,4 @@
 require("bluecore")
-require("config.lazy")
+
+require("core.lazy")
 

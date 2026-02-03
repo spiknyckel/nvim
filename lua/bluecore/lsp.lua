@@ -62,3 +62,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("jdtls")
+vim.lsp.enable("jedi_language_server")

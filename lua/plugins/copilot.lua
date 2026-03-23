@@ -9,13 +9,15 @@ return {
       auto_trigger = true,
       hide_during_completion = vim.g.ai_cmp,
       keymap = {
-        accept = "<C-Enter>",
+        accept = "<C-Up>",
       },
     },
     panel = { enabled = false },
     filetypes = {
       markdown = true,
       help = true,
+      org = true,
+      ["*"] = false,
     },
   },
 }
